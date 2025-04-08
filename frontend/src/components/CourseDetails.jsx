@@ -11,7 +11,7 @@ const CourseDetails = () => {
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/courses/${id}`);
+        const res = await axios.get(`https://lms-server-production-4028.up.railway.app/api/courses/${id}`);
         if (res.data.success && res.data.course) {
           setCourse(res.data.course);
         }

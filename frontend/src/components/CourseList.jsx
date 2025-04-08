@@ -17,7 +17,7 @@ const CoursesList = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        let url = "http://localhost:5000/api/courses";
+        let url = "https://lms-server-production-4028.up.railway.app/api/courses";
         if (userRole === "instructor") {
           url += `?instructorName=${encodeURIComponent(studentName)}`;
         }
