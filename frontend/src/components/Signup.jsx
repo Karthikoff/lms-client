@@ -14,7 +14,7 @@ const Signup = () => {
 
   // ✅ 1. Send OTP to Email
   const sendOtp = async () => {
-    const response = await fetch("http://localhost:5000/api/auth/send-otp", {
+    const response = await fetch("https://lms-server-production-4028.up.railway.app/api/auth/send-otp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -33,7 +33,7 @@ const Signup = () => {
 
   // ✅ 2. Verify OTP
   const verifyOtp = async () => {
-    const response = await fetch("http://localhost:5000/api/auth/verify-otp", {
+    const response = await fetch("https://lms-server-production-4028.up.railway.app/api/auth/verify-otp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, otp }),
@@ -54,7 +54,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/api/auth/signup", {
+    const response = await fetch("https://lms-server-production-4028.up.railway.app/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),

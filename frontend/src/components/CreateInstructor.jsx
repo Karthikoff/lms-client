@@ -50,7 +50,7 @@ const CreateInstructor = () => {
       }
 
       await axios.post(
-        "http://localhost:5000/api/admin/create-instructor",
+        "https://lms-server-production-4028.up.railway.app/api/admin/create-instructor",
         formData,
         {
           headers: {

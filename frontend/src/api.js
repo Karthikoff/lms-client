@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/assessments";
+const API_URL = "https://lms-server-production-4028.up.railway.app/api/assessments";
 
 // Fetch assessments for a specific course
 export const getAssessmentsByCourse = async (courseId, token) => {

@@ -16,7 +16,7 @@ const StudentAttendance = () => {
     const fetchCoursesAndAttendance = async () => {
       try {
         setLoading(true);
-        const res = await axios.get("http://localhost:5000/api/users/enrolled-courses", {
+        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/users/enrolled-courses", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -27,7 +27,7 @@ const StudentAttendance = () => {
           // Fetch attendance for each course
           const attendanceResults = await Promise.all(
             enrolledCourses.map(async (course) => {
-              const attendanceRes = await axios.get(`http://localhost:5000/api/attendance/percentage/${course._id}`, {
+              const attendanceRes = await axios.get(`https://lms-server-production-4028.up.railway.app/api/attendance/percentage/${course._id}`, {
                 headers: { Authorization: `Bearer ${token}` },
               });
 

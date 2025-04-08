@@ -16,7 +16,7 @@ const StdCourseDetails = () => {
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/courses/${id}`);
+        const res = await axios.get(`https://lms-server-production-4028.up.railway.app/api/courses/${id}`);
         if (res.data.success && res.data.course) {
           setCourse(res.data.course);
         }
@@ -28,7 +28,7 @@ const StdCourseDetails = () => {
     const fetchEnrollmentStatus = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(`http://localhost:5000/api/enrollment/status/${id}`, {
+        const res = await axios.get(`https://lms-server-production-4028.up.railway.app/api/enrollment/status/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -52,7 +52,7 @@ const StdCourseDetails = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/wallet/enroll",
+        "https://lms-server-production-4028.up.railway.app/api/wallet/enroll",
         { courseId: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );

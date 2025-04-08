@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/assessments"; // Use localhost:5000
+const API_URL = "https://lms-server-production-4028.up.railway.app/api/assessments"; // Use localhost:5000
 
 // Get all assessments for the student
 const getStudentAssessments = () => {

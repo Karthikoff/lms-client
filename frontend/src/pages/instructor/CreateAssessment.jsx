@@ -30,7 +30,7 @@ const CreateAssessment = () => {
   useEffect(() => {
     const fetchInstructorCourses = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/courses/instructor", {
+        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/courses/instructor", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data.success) {
@@ -62,7 +62,7 @@ const CreateAssessment = () => {
   
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/assessments",
+        "https://lms-server-production-4028.up.railway.app/api/assessments",
         { courseId, instructions, timer, questions, isCertificateEnabled },
         { headers: { Authorization: `Bearer ${token}` } }
       );

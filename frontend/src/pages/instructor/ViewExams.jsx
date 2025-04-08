@@ -15,7 +15,7 @@ const ViewExams = () => {
   useEffect(() => {
     const fetchInstructorCourses = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/courses/instructor", {
+        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/courses/instructor", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data.success) {
@@ -38,7 +38,7 @@ const ViewExams = () => {
   const fetchExams = async (selectedCourseId) => {
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/exams/course/${selectedCourseId}`, {
+      const res = await axios.get(`https://lms-server-production-4028.up.railway.app/api/exams/course/${selectedCourseId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

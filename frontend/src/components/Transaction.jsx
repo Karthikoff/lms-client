@@ -24,7 +24,7 @@ const Transactions = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/wallet/transactions", {
+        const res = await fetch("https://lms-server-production-4028.up.railway.app/api/wallet/transactions", {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -100,7 +100,7 @@ const Transactions = () => {
     setIsAddingMoney(true);
     setError(""); // Clear any previous errors
     try {
-      const res = await fetch("http://localhost:5000/api/wallet/add-money", {
+      const res = await fetch("https://lms-server-production-4028.up.railway.app/api/wallet/add-money", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -116,7 +116,7 @@ const Transactions = () => {
 
         // Refresh transaction history after a brief delay to simulate real-time transaction
         setTimeout(async () => {
-          const res = await fetch("http://localhost:5000/api/wallet/transactions", {
+          const res = await fetch("https://lms-server-production-4028.up.railway.app/api/wallet/transactions", {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
           });
@@ -137,7 +137,7 @@ const Transactions = () => {
     useEffect(() => {
       const fetchWalletBalance = async () => {
         try {
-          const res = await fetch("http://localhost:5000/api/wallet/balance", {
+          const res = await fetch("https://lms-server-production-4028.up.railway.app/api/wallet/balance", {
             method: "GET",
             headers: { "Authorization": `Bearer ${token}` },
           });

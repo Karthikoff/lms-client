@@ -54,7 +54,7 @@ const CoursesList = () => {
 
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/enroll`, {
+      const res = await fetch(`https://lms-server-production-4028.up.railway.app/api/enroll`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

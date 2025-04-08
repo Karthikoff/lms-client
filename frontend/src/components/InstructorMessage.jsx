@@ -14,7 +14,7 @@ const InstructorMessage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/courses/instructor", {
+        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/courses/instructor", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data.success) {
@@ -30,7 +30,7 @@ const InstructorMessage = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/messages/instructor", {
+        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/messages/instructor", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data.success) {
@@ -49,13 +49,13 @@ const InstructorMessage = () => {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/messages/send",
+        "https://lms-server-production-4028.up.railway.app/api/messages/send",
         { courseId: selectedCourse, content: message },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setMessage("");
 
-      const res = await axios.get("http://localhost:5000/api/messages/instructor", {
+      const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/messages/instructor", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.data.success) {
