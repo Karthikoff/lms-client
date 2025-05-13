@@ -30,7 +30,20 @@ const TakeExam = () => {
         );
 
         if (res.data.success) {
-          setQuestions(res.data.exam.questions || []);
+          console.log('API response:', res.data.exam);
+          
+          // Format questions to match the expected structure
+          const formattedQuestions = res.data.exam.questions.map(q => ({
+            _id: q._id,
+            text: q.questionText, // Map questionText to text
+            options: q.options.map(opt => ({
+              _id: opt._id,
+              text: opt.text
+            }))
+          }));
+          
+          console.log('Formatted questions:', formattedQuestions);
+          setQuestions(formattedQuestions);
           setTimer(res.data.exam.timer ? res.data.exam.timer * 60 : 0);
         }
       } catch (error) {
