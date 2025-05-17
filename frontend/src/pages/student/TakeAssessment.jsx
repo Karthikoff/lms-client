@@ -32,6 +32,7 @@ const TakeAssessment = () => {
         setLoading(false);
       }
     };
+    //try
 
     fetchAssessment();
   }, [assessmentId, token]);
