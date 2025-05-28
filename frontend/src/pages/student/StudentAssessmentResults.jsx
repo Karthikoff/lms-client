@@ -14,7 +14,7 @@ const StudentAssessmentResults = () => {
     // Fetch enrolled courses and student email
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/users/enrolled-courses", {
+        const res = await axios.get("https://lms-server-production-4d02.up.railway.app/api/users/enrolled-courses", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -25,7 +25,7 @@ const StudentAssessmentResults = () => {
           }
         }
 
-        const userRes = await axios.get("https://lms-server-production-4028.up.railway.app/api/users/me", {
+        const userRes = await axios.get("https://lms-server-production-4d02.up.railway.app/api/users/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -52,7 +52,7 @@ const StudentAssessmentResults = () => {
 
     try {
       const res = await axios.get(
-        `https://lms-server-production-4028.up.railway.app/api/assessments/instructor/course/${selectedCourseId}/results`,
+        `https://lms-server-production-4d02.up.railway.app/api/assessments/instructor/course/${selectedCourseId}/results`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

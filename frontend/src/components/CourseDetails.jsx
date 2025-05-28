@@ -11,8 +11,8 @@ const CourseDetails = () => {
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
-        // https://lms-server-production-4028.up.railway.app/api/courses
-        const res = await axios.get(`https://lms-server-production-4028.up.railway.app/api/courses/${id}`);
+        // https://lms-server-production-4d02.up.railway.app/api/courses
+        const res = await axios.get(`https://lms-server-production-4d02.up.railway.app/api/courses/${id}`);
         if (res.data.success && res.data.course) {
           setCourse(res.data.course);
         }
@@ -28,7 +28,7 @@ const CourseDetails = () => {
   const handleDeleteCourse = async () => {
     if (window.confirm("Are you sure you want to delete this course?")) {
       try {
-        const res = await axios.delete(`https://lms-server-production-4028.up.railway.app/api/courses/delete/${id}`);
+        const res = await axios.delete(`https://lms-server-production-4d02.up.railway.app/api/courses/delete/${id}`);
         if (res.data.success) {
           alert("Course deleted successfully!");
           navigate("/"); // Redirect to home or courses page

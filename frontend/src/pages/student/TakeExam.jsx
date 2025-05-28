@@ -25,7 +25,7 @@ const TakeExam = () => {
     const fetchExam = async () => {
       try {
         const res = await axios.get(
-          `https://lms-server-production-4028.up.railway.app/api/exams/student/exam/${examId}`,
+          `https://lms-server-production-4d02.up.railway.app/api/exams/student/exam/${examId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -108,7 +108,7 @@ const TakeExam = () => {
 
     try {
       const res = await axios.post(
-        `https://lms-server-production-4028.up.railway.app/api/exams/student/exam/${examId}/submit`,
+        `https://lms-server-production-4d02.up.railway.app/api/exams/student/exam/${examId}/submit`,
         { answers: formattedAnswers },
         { headers: { Authorization: `Bearer ${token}` } }
       );

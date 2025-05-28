@@ -19,13 +19,13 @@ const AdminDashboard = () => {
 
     const fetchDashboardData = async () => {
       try {
-        const resStats = await fetch("https://lms-server-production-4028.up.railway.app/api/admin/dashboard-stats", {
+        const resStats = await fetch("https://lms-server-production-4d02.up.railway.app/api/admin/dashboard-stats", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const statsData = await resStats.json();
         setStats(statsData);
 
-        const resUsers = await fetch("https://lms-server-production-4028.up.railway.app/api/admin/all-users", {
+        const resUsers = await fetch("https://lms-server-production-4d02.up.railway.app/api/admin/all-users", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const usersData = await resUsers.json();

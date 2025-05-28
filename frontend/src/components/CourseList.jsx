@@ -17,7 +17,7 @@ const CoursesList = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        let url = "https://lms-server-production-4028.up.railway.app/api/courses";
+        let url = "https://lms-server-production-4d02.up.railway.app/api/courses";
         if (userRole === "instructor") {
           url += `?instructorName=${encodeURIComponent(studentName)}`;
         }
@@ -54,7 +54,7 @@ const CoursesList = () => {
 
     setLoading(true);
     try {
-      const res = await fetch(`https://lms-server-production-4028.up.railway.app/api/enroll`, {
+      const res = await fetch(`https://lms-server-production-4d02.up.railway.app/api/enroll`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -11,7 +11,7 @@ const StudentMessages = () => {
     const fetchMessages = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/messages/student", {
+        const res = await axios.get("https://lms-server-production-4d02.up.railway.app/api/messages/student", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

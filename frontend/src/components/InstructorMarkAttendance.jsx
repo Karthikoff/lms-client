@@ -16,7 +16,7 @@ const InstructorMarkAttendance = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/courses/instructor", {
+        const res = await axios.get("https://lms-server-production-4d02.up.railway.app/api/courses/instructor", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data.success) setCourses(res.data.courses);
@@ -33,7 +33,7 @@ const InstructorMarkAttendance = () => {
 
     const fetchStudents = async () => {
       try {
-        const res = await axios.get(`https://lms-server-production-4028.up.railway.app/api/courses/${selectedCourse}/students`, {
+        const res = await axios.get(`https://lms-server-production-4d02.up.railway.app/api/courses/${selectedCourse}/students`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data.success) {
@@ -65,7 +65,7 @@ const InstructorMarkAttendance = () => {
   const handleSubmitAttendance = async () => {
     try {
       const res = await axios.post(
-        "https://lms-server-production-4028.up.railway.app/api/attendance/mark",
+        "https://lms-server-production-4d02.up.railway.app/api/attendance/mark",
         {
           courseId: selectedCourse,
           studentAttendances: Object.entries(attendance).map(([studentId, status]) => ({

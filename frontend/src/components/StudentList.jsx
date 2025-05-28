@@ -20,7 +20,7 @@ const StudentList = () => {
 
       try {
         // Fetch courses taught by the instructor
-        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/courses/instructor", {
+        const res = await axios.get("https://lms-server-production-4d02.up.railway.app/api/courses/instructor", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -30,7 +30,7 @@ const StudentList = () => {
               try {
                 // Fetch students for the course
                 const studentRes = await axios.get(
-                  `https://lms-server-production-4028.up.railway.app/api/courses/${course._id}/students`,
+                  `https://lms-server-production-4d02.up.railway.app/api/courses/${course._id}/students`,
                   { headers: { Authorization: `Bearer ${token}` } }
                 );
 
@@ -42,7 +42,7 @@ const StudentList = () => {
                     try {
                       // Ensure backend expects `courseId` + `studentId`
                       const attendanceRes = await axios.get(
-                        `https://lms-server-production-4028.up.railway.app/api/attendance/percentage/${course._id}/${student._id}`,
+                        `https://lms-server-production-4d02.up.railway.app/api/attendance/percentage/${course._id}/${student._id}`,
                         { headers: { Authorization: `Bearer ${token}` } }
                       );
 

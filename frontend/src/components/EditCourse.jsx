@@ -39,7 +39,7 @@ const EditCourse = () => {
           return;  
         }  
 
-        const res = await axios.get(`https://lms-server-production-4028.up.railway.app/api/courses/${id}`, {  
+        const res = await axios.get(`https://lms-server-production-4d02.up.railway.app/api/courses/${id}`, {  
           headers: { Authorization: `Bearer ${token}` },  
         });  
 
@@ -68,7 +68,7 @@ const EditCourse = () => {
     const fetchInstructors = async () => {  
       try {  
         const token = localStorage.getItem("token");  
-        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/admin/all-users", {  
+        const res = await axios.get("https://lms-server-production-4d02.up.railway.app/api/admin/all-users", {  
           headers: { Authorization: `Bearer ${token}` },  
         });  
 
@@ -110,7 +110,7 @@ const EditCourse = () => {
 
     try {  
       const token = localStorage.getItem("token");  
-      const res = await axios.put(`https://lms-server-production-4028.up.railway.app/api/courses/update/${id}`, formData, {  
+      const res = await axios.put(`https://lms-server-production-4d02.up.railway.app/api/courses/update/${id}`, formData, {  
         headers: {  
           "Content-Type": "multipart/form-data",  
           Authorization: `Bearer ${token}`,  

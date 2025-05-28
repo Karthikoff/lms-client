@@ -18,7 +18,7 @@ const TakeAssessment = () => {
     const fetchAssessment = async () => {
       try {
         const res = await axios.get(
-          `https://lms-server-production-4028.up.railway.app/api/assessments/student/exam/${assessmentId}`,
+          `https://lms-server-production-4d02.up.railway.app/api/assessments/student/exam/${assessmentId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -64,7 +64,7 @@ const TakeAssessment = () => {
 
     try {
       const res = await axios.post(
-        `https://lms-server-production-4028.up.railway.app/api/assessments/student/exam/${assessmentId}/submit`,
+        `https://lms-server-production-4d02.up.railway.app/api/assessments/student/exam/${assessmentId}/submit`,
         { answers: formattedAnswers },
         { headers: { Authorization: `Bearer ${token}` } }
       );

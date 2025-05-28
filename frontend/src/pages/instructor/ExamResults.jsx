@@ -12,7 +12,7 @@ const ExamResults = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/courses/instructor", {
+        const res = await axios.get("https://lms-server-production-4d02.up.railway.app/api/courses/instructor", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data.success) {
@@ -31,7 +31,7 @@ const ExamResults = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        `https://lms-server-production-4028.up.railway.app/api/exams/instructor/course/${selectedCourseId}/exam-results`,
+        `https://lms-server-production-4d02.up.railway.app/api/exams/instructor/course/${selectedCourseId}/exam-results`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

@@ -14,7 +14,7 @@ const InstructorResults = () => {
     // Fetch instructor's courses
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("https://lms-server-production-4028.up.railway.app/api/courses/instructor", {
+        const res = await axios.get("https://lms-server-production-4d02.up.railway.app/api/courses/instructor", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (res.data.success) {
@@ -33,7 +33,7 @@ const InstructorResults = () => {
     setLoading(true);
 
     try {
-      const res = await axios.get(`https://lms-server-production-4028.up.railway.app/api/assessments/instructor/course/${selectedCourseId}/results`, {
+      const res = await axios.get(`https://lms-server-production-4d02.up.railway.app/api/assessments/instructor/course/${selectedCourseId}/results`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
